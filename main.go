@@ -46,8 +46,8 @@ func printValues(dig int64, pass string, err error) {
 		panic(err)
 	}
 
-	fmt.Printf("\n\033[1;32mDigits:\033[1;36m %v", dig)
-	fmt.Printf("\n\033[1;32mPassword:\033[1;36m %v\033[0m\n\n", pass)
+	fmt.Printf("\n\033[38;5;46mDigits: %v", dig)
+	fmt.Printf("\n\033[38;5;46mPassword: %v\033[0m\n\n", pass)
 }
 
 func main() {
@@ -66,7 +66,7 @@ func main() {
 	} else {
 		var dig int64
 
-		fmt.Printf("\n\033[1;33mLength:\033[1;36m ")
+		fmt.Printf("\n\033[38;5;46mLength:\033[38;5;46m ")
 		fmt.Scanf("%d", &dig)
 		pass, err := generatePass(int64(dig))
 		printValues(dig, pass, err)
